@@ -4,7 +4,7 @@ Token with choosable addresses: transfer("Robert","Alice",20000);
 
 TRY IT! It will give 100 tokens to any address to try it out!
 It's ready at Kovan to use it (copy the abi and try it at MyEtherwallet, or copy the code and try it at Remix):
-0x52b6da0a0048ef312420873824c041dada6c3025
+https://kovan.etherscan.io/address/0x52b6da0a0048ef312420873824c041dada6c3025#code
 
 
 Any ethereum address can have unlimited "addies" associated to it, and send tokens from and to any addy, no matter if it is owned by the same address or another.
