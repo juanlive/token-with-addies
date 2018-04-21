@@ -38,6 +38,7 @@ contract TokenWithAddies {
     mapping(string => uint256) balances;
     mapping(string => mapping(address => uint256)) allowed;
     mapping(string => address) addies;
+    mapping(address => bool) received;
 
 
     event Transfer(string indexed from, string indexed to, uint256 value);
@@ -83,7 +84,7 @@ contract TokenWithAddies {
         symbol = 'TWA'; 
         decimals = 18; 
         multiplier = 10 ** uint(decimals);
-        totalSupply = 1000000 * multiplier; // 1,000,000 tokens
+        totalSupply = 10000000 * multiplier; // 10,000,000 tokens
         rootAddress = msg.sender;        
         Owner = msg.sender;
         addies["a"] = msg.sender;
@@ -125,6 +126,11 @@ contract TokenWithAddies {
     function assignAddy(string _addy) public {
         require (addies[_addy] == 0);
         addies[_addy] = msg.sender;
+        // Pay 100 tokens to the address for unique time
+        if (received[msg.sender]==false) {
+                if (internalTransfer("a",_addy,100*multiplier)) received[msg.sender] = true;
+             }
+        //
         AssignedAddy(_addy, msg.sender);
     }
 
