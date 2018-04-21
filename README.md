@@ -13,11 +13,12 @@ Any ethereum address can have unlimited "addies" associated to it, and send toke
 assignAddy(string)
 
 Assign any addy to the sender ethereum address. 
-If the addy is already assigned, tx will fail.
+If the addy is already assigned to any address, tx will fail.
 If assinment is successfull, an event will be created:
 AssignedAddy(_addy, msg.sender);
 AND 100 TOKENS WILL BE SENT TO THE SENDER ADDRESS!
 
+addy can be any string accepted by solidity.
 
 checkAddy(string)
 
